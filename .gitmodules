@@ -1,0 +1,15 @@
+[submodule "dv-processing"]
+	path = dv-processing
+	url = https://gitlab.com/inivation/dv/dv-processing.git
+[submodule "dv-runtime"]
+	path = dv-runtime
+	url = https://gitlab.com/inivation/dv/dv-runtime
+[submodule "dv_ros_ws/src/dv-ros"]
+	path = dv_ros_ws/src/dv-ros
+	url = https://gitlab.com/inivation/dv/dv-ros.git
+[submodule "realsense_ws/src/realsense-ros"]
+	path = realsense_ws/src/realsense-ros
+	url = https://github.com/IntelRealSense/realsense-ros.git
+[submodule "e2TS/src/rpg_dvs_ros"]
+	path = e2TS/src/rpg_dvs_ros
+	url = https://github.com/miraculin1/rpg_dvs_ros.git

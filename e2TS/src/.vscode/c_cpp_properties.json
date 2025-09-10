@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/kaizhen/dvs/e2TS/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/kaizhen/dvs/e2TS/src/rpg_dvs_ros/davis_ros_driver/include/**",
+        "/home/kaizhen/dvs/e2TS/src/rpg_dvs_ros/dvs_calibration/include/**",
+        "/home/kaizhen/dvs/e2TS/src/rpg_dvs_ros/dvs_renderer/include/**",
+        "/home/kaizhen/dvs/e2TS/src/rpg_dvs_ros/dvs_ros_driver/include/**",
+        "/home/kaizhen/dvs/e2TS/src/rpg_dvs_ros/dvxplorer_ros_driver/include/**",
+        "/home/kaizhen/dvs/e2TS/src/image_representation/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

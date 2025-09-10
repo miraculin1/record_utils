@@ -1,0 +1,10 @@
+use_stereo_cam: True
+representation_mode: 1
+    # Voxel      // 0
+    # Fast_TS    // 1
+duration_ms: 40
+median_blur_kernel_size: 1
+blur_size: 7 #15 for 1Mpx
+use_sim_time: True
+is_left: False
+generation_rate_hz: 10

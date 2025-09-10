@@ -1,0 +1,44 @@
+<launch>
+  <rosparam param="/use_sim_time">false</rosparam>
+
+  <!-- Calibration folder -->
+  <arg name="calibInfoDirStr" default="$(find image_representation)/calib/dsec/zurich_city_04_a"/>
+
+  <!-- <node name="image_representation_left" pkg="image_representation" type="image_representation" output="screen" >
+    <remap from="events" to="/dvs/events" />
+    <remap from="voxel_grid" to="/davis/left/voxel_grid" />
+
+    <rosparam command="load" file="$(find image_representation)/cfg/image_representation_voxel_l.yaml" />
+    <rosparam param="calibInfoDir" subst_value="true">$(arg calibInfoDirStr)</rosparam>
+  </node> -->
+
+  <!-- <node name="image_representation_right" pkg="image_representation" type="image_representation" output="screen" >
+    <remap from="events" to="/davis/right/events" />
+    <remap from="voxel_grid" to="/davis/right/voxel_grid" />
+    
+    <rosparam command="load" file="$(find image_representation)/cfg/image_representation_voxel_r.yaml" />
+    <rosparam param="calibInfoDir" subst_value="true">$(arg calibInfoDirStr)</rosparam>
+  </node> -->
+
+   <node name="TS_left" pkg="image_representation" type="image_representation" output="screen" >
+    <remap from="events" to="/dvs/events" />
+    <remap from="TS_img" to="/davis/left/TS_img" />
+    <rosparam command="load" file="$(find image_representation)/cfg/image_representation_TS_l.yaml" />
+    <rosparam param="calibInfoDir" subst_value="true">$(arg calibInfoDirStr)</rosparam>
+  </node>
+
+  <node name="TS_right" pkg="image_representation" type="image_representation" output="screen" >
+    <remap from="events" to="/dvxplorer_left/events" />
+    <remap from="TS_img" to="/davis/right/TS_img" />
+    
+    <rosparam command="load" file="$(find image_representation)/cfg/image_representation_TS_r.yaml" />
+    <rosparam param="calibInfoDir" subst_value="true">$(arg calibInfoDirStr)</rosparam>
+  </node>
+
+  <node name="global_timer" pkg="rostopic" type="rostopic" args="pub -s -r 10 /sync std_msgs/Time 'now' ">
+		<rosparam param="/use_sim_time">false</rosparam>
+  </node>
+  
+  <node pkg="rqt_gui" type="rqt_gui" name="gui"
+      args="--perspective-file $(find image_representation)/test_cameras.perspective" />
+</launch>
