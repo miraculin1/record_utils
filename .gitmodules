@@ -13,9 +13,9 @@
 [submodule "e2TS/src/rpg_dvs_ros"]
 	path = e2TS/src/rpg_dvs_ros
 	url = https://github.com/miraculin1/rpg_dvs_ros.git
-[submodule "xsens_630_ws/src/xsens_mti_driver"]
-	path = xsens_630_ws/src/xsens_mti_driver
-	url = https://github.com/nobleo/xsens_mti_driver.git
 [submodule "vrpn_ws/src/vrpn_client_ros"]
 	path = vrpn_ws/src/vrpn_client_ros
 	url = https://github.com/ros-drivers/vrpn_client_ros.git
+[submodule "xsens_630_ws/src/xsens_mti_driver"]
+	path = xsens_630_ws/src/xsens_mti_driver
+	url = https://github.com/miraculin1/xsens_mti_driver.git

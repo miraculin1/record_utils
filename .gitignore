@@ -1,0 +1,6 @@
+**/build/
+**/devel/
+**/src/CMakeLists.txt
+**/.catkin_tools
+**/.catkin_workspace
+**/logs
