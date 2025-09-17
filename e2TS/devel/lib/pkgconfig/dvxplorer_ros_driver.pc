@@ -1,8 +1,0 @@
-prefix=/workspace/record_utils/e2TS/devel
-
-Name: dvxplorer_ros_driver
-Description: Description of dvxplorer_ros_driver
-Version: 0.0.0
-Cflags: -I/workspace/record_utils/e2TS/devel/include -I/workspace/record_utils/e2TS/src/rpg_dvs_ros/dvxplorer_ros_driver/include
-Libs: -L${prefix}/lib -ldvxplorer_ros_driver_nodelet
-Requires: roscpp dvs_msgs std_msgs sensor_msgs dynamic_reconfigure camera_info_manager nodelet
