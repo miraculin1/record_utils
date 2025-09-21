@@ -6,7 +6,7 @@
 	url = https://gitlab.com/inivation/dv/dv-runtime
 [submodule "dv_ros_ws/src/dv-ros"]
 	path = dv_ros_ws/src/dv-ros
-	url = https://gitlab.com/inivation/dv/dv-ros.git
+	url = https://github.com/miraculin1/dv-ros.git
 [submodule "realsense_ws/src/realsense-ros"]
 	path = realsense_ws/src/realsense-ros
 	url = https://github.com/miraculin1/realsense-ros.git
