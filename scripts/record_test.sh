@@ -4,6 +4,7 @@ rosbag record -O ./bags/$1.bag \
     /imu/time_ref /imu/status /imu/data \
     /camera/color/image_gray \
     /vrpn_client_node/tracker_wx/pose \
+    /camera/depth/image_rect_raw \
     --tcpnodelay
 
 

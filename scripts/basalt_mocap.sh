@@ -1,3 +1,3 @@
 #!/bin/bash
 #
-basalt_calibrate_imu --dataset-path ./bags/gray.bag --dataset-type bag --aprilgrid /usr/etc/basalt/aprilgrid_6x6.json --result-path ./bags/basalt_result
+basalt_calibrate_imu --dataset-path ./bags/rectify0.bag --dataset-type bag --aprilgrid /usr/etc/basalt/nail_board_6x6.json --result-path ./bags/basalt_result
