@@ -3,7 +3,7 @@ rosbag record -O ./bags/$1.bag \
     /dvxplorer_left/triggers \
     /imu/time_ref /imu/status /imu/data \
     /camera/color/image_gray \
-    /vrpn_client_node/tracker_wx/pose \
+    /vrpn_client_node/tracker_wx1/pose \
     --tcpnodelay
 
 
