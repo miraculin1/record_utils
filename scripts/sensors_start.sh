@@ -1,18 +1,8 @@
 #!/bin/bash
 
-tmux split-window -v "
-bash -c \" \
-cd ./e2TS; \
-source devel/setup.bash; \
-roslaunch image_representation voxel_test.launch; \"
-"
-
-echo "Time surface successfully started!"
-
-
 sleep 1
 
-tmux split-window -h "
+tmux split-window -v "
 sudo bash -c \" \
 cd ./dv_ros_ws; \
 source devel/setup.bash && \
@@ -27,6 +17,7 @@ tmux split-window -h "
 bash -c \" \
 cd ./realsense_ws; \
 source devel/setup.bash; \
+rs-enumerate-devices -c; \
 roslaunch realsense2_camera rs_aligned_depth.launch; \"
 "
 
@@ -35,16 +26,16 @@ echo "Realsense camera successfully started!"
 
 sleep 1
 
-tmux split-window -h "
-sudo bash -c \" \
-cd ./xsens_630_ws; \
-source devel/setup.bash; \
-roslaunch xsens_mti_driver xsens_mti_node.launch; \"
-"
-
-echo "Xsens MTi successfully started!"
-
-sleep 1
+# tmux split-window -h "
+# sudo bash -c \" \
+# cd ./xsens_630_ws; \
+# source devel/setup.bash; \
+# roslaunch xsens_mti_driver xsens_mti_node.launch; \"
+# "
+#
+# echo "Xsens MTi successfully started!"
+#
+# sleep 1
 
 
 tmux split-window -h "
@@ -65,3 +56,13 @@ sleep 1
 # "
 #
 # echo "ekf successfully started!"
+
+tmux split-window -h "
+bash -c \" \
+cd ./e2TS; \
+source devel/setup.bash; \
+roslaunch image_representation voxel_test.launch; \"
+"
+
+echo "Time surface successfully started!"
+
