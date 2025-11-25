@@ -11,11 +11,18 @@ def read_poses_from_txt(file_path):
             line = line.strip()
             if not line or line.startswith('#'):
                 continue
-            try:
-                x, y, z, qx, qy, qz, qw = map(float, line.split())
-                poses.append((x, y, z, qx, qy, qz, qw))
-            except ValueError:
-                rospy.logwarn(f"Invalid line skipped: {line}")
+            if len(line.split()) == 7:
+                try:
+                    x, y, z, qx, qy, qz, qw = map(float, line.split())
+                    poses.append((x, y, z, qx, qy, qz, qw))
+                except ValueError:
+                    rospy.logwarn(f"Invalid line skipped: {line}")
+            else:
+                try:
+                    _, x, y, z, qx, qy, qz, qw = map(float, line.split())
+                    poses.append((x, y, z, qx, qy, qz, qw))
+                except ValueError:
+                    rospy.logwarn(f"Invalid line skipped: {line}")
     return poses
 
 def main():

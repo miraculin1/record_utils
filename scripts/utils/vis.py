@@ -196,6 +196,7 @@ def main():
     collector = TrajCollector(topic=args.topic, duration=args.duration, frame_id_filter=args.frame_id)
     collector.spin_and_collect()
     Ts, stamps = collector.get_data()
+    print(f"total poses{len(Ts)}")
     plot_traj_with_axes(
         Ts,
         title=args.title,
