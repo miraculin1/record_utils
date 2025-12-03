@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 #===event
 sudo add-apt-repository ppa:inivation-ppa/inivation
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
@@ -9,6 +10,7 @@ sudo apt-get install software-properties-common build-essential -y
 sudo apt-get install gcc-10 g++-10 cmake -y
 sudo apt-get install libcaer-dev -y
 sudo apt-get install libfmt-dev python3-catkin python3-catkin-tools ros-noetic-catkin ros-noetic-camera-info-manager -y
+sudo apt-get install ros-noetic-vrpn -y
 
 wget https://archives.boost.io/release/1.76.0/source/boost_1_76_0.tar.gz
 tar -xzf boost_1_76_0.tar.gz
@@ -18,9 +20,7 @@ cd boost_1_76_0
 ./b2 install --prefix="out" --build-dir="build"
 cd ..
 
-git clone https://gitlab.com/inivation/dv/dv-processing.git
 cd dv-processing
-git checkout 1.7.9
 mkdir build
 cd build
 CC=gcc-10 CXX=g++-10 cmake -DBOOST_ROOT=../boost_1_76_0/out -DBOOST_INCLUDEDIR=../boost_1_76_0/out/include -DBOOST_LIBRARYDIR=../boost_1_76_0/out/lib -DCMAKE_INSTALL_PREFIX=/usr ..
@@ -28,9 +28,7 @@ make -j
 sudo make install
 cd ..
 
-git clone https://gitlab.com/inivation/dv/dv-runtime.git
 cd dv-runtime
-git checkout 1.6.2
 cmake -DBOOST_ROOT=../boost_1_76_0/out -DBOOST_INCLUDEDIR=../boost_1_76_0/out/include -DBOOST_LIBRARYDIR=../boost_1_76_0/out/lib -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_C_COMPILER=gcc-10 -DCMAKE_CXX_COMPILER=g++-10 .
 make -j
 sudo make install
