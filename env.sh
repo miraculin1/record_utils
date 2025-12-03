@@ -27,6 +27,7 @@ CC=gcc-10 CXX=g++-10 cmake -DBOOST_ROOT=../boost_1_76_0/out -DBOOST_INCLUDEDIR=.
 make -j
 sudo make install
 cd ..
+cd ..
 
 cd dv-runtime
 cmake -DBOOST_ROOT=../boost_1_76_0/out -DBOOST_INCLUDEDIR=../boost_1_76_0/out/include -DBOOST_LIBRARYDIR=../boost_1_76_0/out/lib -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_C_COMPILER=gcc-10 -DCMAKE_CXX_COMPILER=g++-10 .
